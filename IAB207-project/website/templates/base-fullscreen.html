@@ -41,7 +41,7 @@
           <div class="collapse navbar-collapse" id="mynavbar">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link" href="index.html"
+                <a class="nav-link" href="/"
                   >Home
                   <div class="nav-borderline"></div
                 ></a>
@@ -57,17 +57,17 @@
                 >
                 <ul class="dropdown-menu">
                   <li>
-                    <a class="dropdown-item" href="index.html#musicevents"
+                    <a class="dropdown-item" href="/creation"
                       >Events List</a
                     >
                   </li>
                   <li>
-                    <a class="dropdown-item" href="creation.html#creation"
+                    <a class="dropdown-item" href="/creation"
                       >Create Events</a
                     >
                   </li>
                   <li>
-                    <a class="dropdown-item" href="creation.html#update"
+                    <a class="dropdown-item" href="/creation"
                       >Update Events</a
                     >
                   </li>
@@ -75,14 +75,16 @@
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" href="book_history.html">Book History</a>
+                <a class="nav-link" href="/history">Book History</a>
               </li>
             </ul>
           </div>
 
-          <a href="index.html" class="navbar-brand"
+          <a href="/" class="navbar-brand"
             ><img src="{{ url_for('static',filename='img/logo1.png')}}" alt= "Eventos logo"/>
           </a>
+
+            <a class="nav-link" style="color: white;" href="{{url_for('auth.register')}}">Logout</a>
         </div>
       </nav>
       {% block header %}
@@ -101,7 +103,7 @@
         <img src="{{ url_for('static',filename='img/logo1.png')}}" alt="Eventos logo" />
       </div>
       © 2022 Copyright:
-      <a href="index.html" style="text-decoration: none" class="fw-bold">
+      <a href="/" style="text-decoration: none" class="fw-bold">
         Eventos</a
       >
     </div>
