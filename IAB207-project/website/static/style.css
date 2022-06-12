@@ -1,0 +1,300 @@
+body,
+html {
+  height: 100%;
+}
+
+.navbar,
+.navbar {
+  /* background-color: #181818b8; */
+  border-color: #000000;
+  color: white;
+  font-size: large;
+  padding: 10px;
+}
+
+.navbar img {
+  width: 50px;
+}
+
+.nav-item {
+  margin: 10px;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: #ffffff;
+}
+
+div .navbar-nav > li > a:hover,
+div .navbar-nav > li > a:focus,
+.navbar-dark .navbar-nav .nav-link:hover {
+  color: #353030b7;
+  background-color: #ffffff;
+  font-weight: bold;
+}
+
+/* a > a:hover .nav-borderline:hover {
+  display: block;
+  max-width: 100px;
+  height: 5px;
+  background-color: #0d6efd;
+  opacity: 0.5;
+} */
+
+/* Background Image */
+.bg-cover {
+  background-size: cover !important;
+}
+
+.img-fluid {
+  width: 100% \9;
+  max-width: 100%;
+  height: auto;
+}
+
+.btn-info {
+  background-color: slategrey;
+  border-color: #555;
+}
+
+.btn.btn-info:hover {
+  background-color: #c06639;
+  border-color: #f3ecec;
+}
+
+a.music {
+  padding: 10px;
+  margin: auto 10px;
+  text-decoration: none;
+}
+
+a.music:hover {
+  color: #0980d0;
+  text-decoration: underline;
+  font-style: italic;
+}
+
+.title {
+  color: #1a1a1a;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.content {
+  position: relative;
+  width: 100%;
+  max-width: 250px;
+  margin: auto;
+  overflow: hidden;
+}
+.content .content-overlay {
+  background: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  -webkit-transition: all 0.4s ease-in-out 0s;
+  -moz-transition: all 0.4s ease-in-out 0s;
+  transition: all 0.4s ease-in-out 0s;
+}
+.content:hover .content-overlay {
+  opacity: 1;
+}
+.content-image {
+  max-width: 100%;
+  min-width: auto;
+  max-height: 250px;
+  min-height: auto;
+}
+img.content-image {
+  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+.content-details {
+  position: absolute;
+  text-align: center;
+  padding-left: 1em;
+  padding-right: 1em;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  -moz-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+.content:hover .content-details {
+  top: 50%;
+  left: 50%;
+  opacity: 1;
+}
+.content-details h3 {
+  color: #fff;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  margin-bottom: 0.5em;
+  text-transform: uppercase;
+}
+.content-details p {
+  color: #fff;
+  font-size: 0.8em;
+}
+.fadeIn-bottom {
+  top: 80%;
+}
+
+.pic > img {
+  object-fit: cover;
+  height: 250px;
+}
+
+.card {
+  min-height: 550px;
+}
+
+.backgroundEffect {
+  bottom: 0;
+  height: 0px;
+  width: 100%;
+}
+
+.col .card:hover {
+  transform: scale(1.025);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 5px 10px;
+}
+
+.col .card:hover .backgroundEffect {
+  bottom: 0;
+  height: 320px;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+  animation: popBackground 0.3s ease-in;
+}
+
+img.rounded-circle {
+  object-fit: cover;
+  height: 170px;
+}
+
+div.col > div.card-body > .btn {
+  background-color: #0980d0;
+  color: #ffffff;
+  border-color: #0980d0;
+}
+
+div.col > div.card-body > .btn:hover {
+  transform: scale(1.025);
+  box-shadow: #0000003d 0px 5px 10px;
+  font-weight: 400;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.pic {
+  position: relative;
+  object-fit: cover;
+}
+
+.container.bg-custom {
+  background-color: #267384;
+  min-width: auto;
+  max-width: 50%;
+}
+
+#filter > button {
+  padding: 5px 15px;
+  margin: 3px;
+}
+
+.comingsoon {
+  padding: 10px;
+  color: #ffffff;
+}
+
+.comingsoon:hover {
+  background-color: #ffffff;
+  color: #2a8ed1;
+  text-decoration: none;
+}
+
+.status {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 160px;
+  height: 70px;
+  background-color: #0980d0;
+  color: white;
+  position: absolute;
+  bottom: 0px;
+  transition: all ease;
+  font-size: large;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-weight: bold;
+}
+
+.bg-primary {
+  font-size: larger;
+  letter-spacing: 5px;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+div > .btn-success:hover {
+  box-shadow: #0000003d 0px 5px 10px;
+  font-weight: bold;
+}
+
+button.close:hover {
+  border: 0;
+  font-weight: bold;
+  background-color: #000;
+  color: white;
+}
+
+.icon {
+  background: url("../bootstrap/icons-1.8.1/icons/star-fill.svg");
+  height: 16px;
+  width: 16px;
+  display: block;
+  /* Other styles here */
+}
+
+.time,
+.day {
+  font-weight: bold;
+  font-size: large;
+}
+
+.time {
+  font-weight: 300;
+  margin: auto 5px;
+}
+
+.border-line {
+  display: block;
+  max-width: 100px;
+  height: 5px;
+  background-color: #0d6efd;
+  opacity: 0.5;
+  margin: 20px auto 50px auto;
+}
+
+hr {
+  opacity: 0.3;
+  border: rgb(120, 119, 119);
+}
+
+.img-fluid {
+  min-width: 10px;
+  max-width: 50%;
+  height: auto;
+}
