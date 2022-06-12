@@ -1,0 +1,260 @@
+{% extends 'base-fullscreen.html' %}
+
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block header %}
+  <!-- Detail -->
+  <div class="container">
+    <h1 class="fw-bold px-5 text-center" style="margin: 2rem 10%">
+      {{event.name}}
+    </h1>
+    <div class="border-line"></div>
+  </div>
+
+  <div class="container mt-3 p-5 shadow mb-5 bg-white rounded-3">
+    <div class="row align-items-center p-3 text-center">
+      <div class="col-6 col-md-6 p-3">
+        <!-- <picture> -->
+        <!-- <img
+          src="img/futuremusic.png"
+          alt=""
+          sizes="(max-width: 1700px) 400px, 300px"
+          srcset="
+            img/resize/jazzjulian_50.jpg 512w,
+            img/resize/jazzjulian_80.jpg 819w,
+            img/resize/jazzjulian_30.jpg 307w
+          "
+        /> -->
+        <img
+          src="{{ event.image }}"
+          alt="test"
+          class="rounded"
+          sizes="(max-width: 1024px) 400px, 700px"
+        />
+        <!-- 80-492, 50-308, 30-185 -->
+        <!-- old, 50-512, 80-819, 30-307 -->
+        <!-- </picture> -->
+      </div>
+
+      <div class="col-12 col-md-6 p-3">
+        <p class="text-left" style="font-size: large; text-align:end;">
+          <span
+            class="font-italic text-primary fw-bold"
+            style="font-style: italic"
+          >
+          {{event.artists}} <br />
+          </span>
+          {{event.description}} <br />
+          <span class="text-primary fw-bold"> This event is scheduled for the {{event.date}}</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="row align-items-center p-3 text-center">
+      <div class="col-6 col-md-6 p-3">
+        <!-- <picture> -->
+        <!-- <img
+          src="img/futuremusic.png"
+          alt=""
+          sizes="(max-width: 1700px) 400px, 300px"
+          srcset="
+            img/resize/jazzjulian_50.jpg 512w,
+            img/resize/jazzjulian_80.jpg 819w,
+            img/resize/jazzjulian_30.jpg 307w
+          "
+        /> -->
+        <img
+          src="img/justinticket.png"
+          alt=""
+          class="rounded"
+          sizes="(max-width: 1024px) 300px, 500px"
+          srcset="
+            img/resize/justinticket_512.png 512w,
+            img/resize/justinticket_800.png 800w,
+            img/resize/justinticket_307.png 307w
+          "
+        />
+        <!-- 80-492, 50-308, 30-185 -->
+        <!-- old, 50-512, 80-819, 30-307 -->
+        <!-- </picture> -->
+      </div>
+
+      <div class="col-12 col-md-6 p-3">
+        <h3
+          class="bg-danger bg-custom bg-gradient text-center text-white p-3 m-3 rounded-3"
+        >
+          <span class="text-uppercase">{{event.date}}</span> 
+          <br />
+          {{event.time}}
+        </h3>
+
+        <div class="row">
+          <div class="col-12 col-md-6 fw-bold p-5" style="font-size: larger">
+            <span class="text-danger">Location(s): </span> <br />
+            {{event.location}}
+          </div>
+
+          <div class="col-12 col-md-6 fw-bold p-5" style="font-size: larger">
+            <span class="text-danger">Organizer(s): </span> <br />
+            <p class="text-jus">
+              {{event.organiser}}
+              <br />
+              Contact Person: {{event.organiser}}
+              <br />
+              Email:
+              <a href="mailto:seanghazi@gmail.com">{{event.email}}</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row align-items-center px-5 m-4">
+      <div class="fw-bold container">
+        <div class="text-danger text-center p-1">
+          <h5>
+            <i class="bi bi-exclamation-triangle" style="color: #dc3545"></i>
+            Important Information
+          </h5>
+        </div>
+        <div>
+          <ol class="list-group list-group-numbered">
+            <li class="list-group-item list-group-item-danger">
+              Limited to 4 tickets per customer
+            </li>
+            <li class="list-group-item list-group-item-danger">
+              Children under the age of 14 must be accompanied by a
+              parent/legal guardian at all times and have purchased a valid
+              ticket
+            </li>
+            <li class="list-group-item list-group-item-danger">
+              For successful transactions, only booking confirmation will be
+              delivered via email to the purchaser. E-ticket delivery will be
+              supressed until a date closer to the event
+            </li>
+            <li class="list-group-item list-group-item-danger">
+              Available to fully vaccinated individuals who have, by the event
+              date: <br />
+              <p style="font-style: italic; font-size: small">
+                Completed 14 days after 2 doses of vaccine (Pfizer, Astra
+                Zeneca, Sinovac), or 28 days after 1 dose of vaccine (Johnson
+                & Johnson, CanSino)
+              </p>
+            </li>
+            <li class="list-group-item list-group-item-danger">
+              PET (Pre-Event Testing) may be required for this event. All
+              ticket holders may be required to upload Covid-19 test results
+              24 hrs prior to the event date to receive event e-tickets.
+            </li>
+            <li class="list-group-item list-group-item-danger">
+              All other ticketing, venue & event entry terms & conditions
+              apply.
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <!-- Button trigger booking event modal -->
+    <div class="align-item-center text-center mt-3">
+      <button
+        class="btn btn-success mx-5 px-5 py-3 rounded-3"
+        type="button"
+        data-bs-toggle="modal"
+        data-bs-target="#eventmodal"
+      >
+        Register Now !
+      </button>
+    </div>
+    <!-- Button trigger booking event modal -->
+
+    <!-- Book Event Modal -->
+    <div
+      class="modal fade"
+      id="eventmodal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="eventModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="eventModalLabel">Register</h5>
+            <button
+              type="button"
+              class="close rounded"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+          <div class="modal-body">
+            <form action="#">
+              <div class="form-outline">
+                <label class="form-label" for="typeNumber">Quantity</label>
+                <input type="number" id="quantity" class="form-control" />
+              </div>
+            </form>
+          </div>
+
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-danger rounded-3"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button
+              type="button"
+              class="btn btn-success rounded-3"
+              data-bs-dismiss="modal"
+            >
+              Submit
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Book Event Modal -->
+  </div>
+  <!-- Detail -->
+{% endblock %}
+  <!-- Comments -->
+{% block title %} Comments {% endblock %}
+
+{% block content %} 
+  <!-- Form Comment -->
+  <div class="container mt-5 mb-5 pt-5 border-top border-bottom">
+    <div class="row">
+      <h3 class="fw-bold text-uppercase p-3 mx-auto text-center">
+        Please let us know your thoughts! Comment below :)
+      </h3>
+    </div>
+    {{wtf.quick_form(form,"/event/{0}".format(event.id))}} 
+    {% for comment in event.comments %}
+    <form class="p-5 mx-5">
+      <div class="form-group row my-3">
+        <label
+          for="username"
+          class="col-sm-2 col-form-label"
+          style="letter-spacing: 1px"
+          >{{comment.user.name}}</label
+        >
+      </div>
+      <div class="form-group row my-3">
+        <label
+          for="inputComment"
+          class="col-sm-2 col-form-label"
+          style="letter-spacing: 1px"
+          >{{comment.text}}</label
+        >
+      </div>
+    </form>
+    {% endfor %}
+  </div>
+  <!-- Form Comment -->
+{% endblock %}

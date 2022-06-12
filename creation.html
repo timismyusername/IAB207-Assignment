@@ -1,0 +1,477 @@
+{% extends 'base-fullscreen.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block header %}
+    <!--Table Events -->
+    <div class="container mt-5 mb-5 p-5 border-top border-bottom">
+        <div class="row">
+            <h3 class="fw-bold text-uppercase p-2 mx-auto text-center" id="update">
+                Here is the list of your Published Events
+            </h3>
+            <div class="border-line"></div>
+        </div>
+        <table class="table table-hover mx-auto text-center align-items-center">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Event Name</th>
+                    <th scope="col">Date Time</th>
+                    <th scope="col">Location(s)</th>
+                    <th scope="col">Pricing</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody class="align-middle">
+                <tr>
+                    <th scope="row">1</th>
+                    <td>KL International Jazz & Arts Festival 2019</td>
+                    <td>
+                        29 September 2019 <br />
+                        7:30PM
+                    </td>
+                    <td>
+                        <span class="fw-bold">Kinda Blue </span>
+                        <br />
+                        KL Jazz & Arts Centre <br />
+                         No. 1 Lorong Kapar, Off Jalan Syed Putra, <br />
+                        58000 Kuala Lumpur
+                    </td>
+                    <td>
+                        <span class="fw-bold">Early Bird (until 27 September 2019):</span>
+                        <br />
+                        <span class="text-danger">RM118</span><br />
+                        <span class="fw-bold">At the Door (29 September 2019):</span>
+                        <br />
+                        <span class="text-danger">RM180</span>
+                    </td>
+                    <td>
+                        <!-- Button trigger booking event modal -->
+                        <div>
+                            <button
+                                class="btn btn-primary rounded-3 fw-bold px-5 m-2"
+                                type="button"
+                                data-bs-toggle="modal"
+                                data-bs-target="#editevent"> Edit
+                            </button>
+                        </div>
+                        <!-- Button trigger booking event modal -->
+                    </td>
+                </tr>
+                <tr>
+                    <th  scope="row">2</th>
+                    <td>George Lam 40th Anniversary LIVE in Genting 2018 - Encore</td>
+                    <td>
+                        3 February 2018 <br />
+                        08:30PM
+                    </td>
+                    <td>
+                        <span class="fw-bold">Genting Arena of Stars</span>
+                        <br />
+                        Genting Highlands Resort, <br />
+                        Genting Highlands, <br />
+                        69000 Pahang, Malaysia
+                    </td>
+                    <td>
+                        <span class="fw-bold">Early Bird (until 30 January 2018):</span>
+                        <br />
+                        <span class="text-danger">RM280</span><br />
+                        <span class="fw-bold">At the Door (3 February 2018):</span>
+                        <br />
+                        <span class="text-danger">RM356</span>
+                    </td>
+                    <td>
+                        <!-- Button trigger booking event modal -->
+                        <div class="align-item-center text-center">
+                            <button
+                                class="btn btn-primary rounded-3 fw-bold px-5 m-2"
+                                type="button"
+                                data-bs-toggle="modal"
+                                data-bs-target="#editevent"> Edit
+                            </button>
+                        </div>
+                        <!-- Button trigger booking event modal -->
+                    </td>
+                </tr>
+                <tr>
+                    <th  scope="row">3</th>
+                    <td>Incubus Live in Kuala Lumpur 2018 Malaysia</td>
+                    <td>
+                        13 February 2018 <br />
+                        08:00PM
+                    </td>
+                    <td>
+                        <span class="fw-bold">Kinda Blue</span>
+                        <br />
+                        20, Jalan Sultan Ismail, <br />
+                        Kuala Lumpur, <br />
+                        50450 Kuala Lumpur,
+                        Wilayah Persekutuan Kuala Lumpur, Malaysia
+                    </td>
+                    <td>
+                        <span class="fw-bold">Early Bird (Before 5 February 2018):</span>
+                        <br />
+                        <span class="text-danger">RM153</span><br />
+                        <span class="fw-bold">At the Door (5 to 12 February 2018):</span>
+                        <br />
+                        <span class="text-danger">RM225</span>
+                    </td>
+                    <td>
+                        <!-- Button trigger booking event modal -->
+                        <div class="align-item-center text-center">
+                            <button
+                                class="btn btn-primary rounded-3 fw-bold px-5 m-2"
+                                type="button"
+                                data-bs-toggle="modal"
+                                data-bs-target="#editevent"> Edit
+                            </button>
+                        </div>
+                        <!-- Button trigger booking event modal -->
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- Edit Event Modal -->
+        <!-- Table Events -->
+        <!-- Edit Event Modal -->
+        <div
+            class="modal fade"
+            id="editevent"
+            tabindex="-1"
+            role="dialog"
+            aria-labelledby="editModalLabel"
+            aria-hidden="true">
+            <!--Modal-->
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content p-3">
+                    <!--Modal Header-->
+                    <div class="modal-header">
+                        <h5 class="modal-title fw-bold" id="editModalLabel">
+                            Event Details
+                        </h5>
+                        <button
+                            type="button"
+                            class="close rounded"
+                            data-bs-dismiss="modal"
+                            aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <!--Modal Header-->
+                    <!--Modal Body-->
+                    <div class="modal-body">
+                        <form action="#">
+                            <div class="form-outline">
+                                <div class="p-1 text-center align-items-center">
+                                    <img
+                                        src="/static/img/futuremusic.png"
+                                        alt=""
+                                        style="min-width: auto; max-width: 400px"/>
+                                </div>
+                                <div class="form-group p-1">
+                                    <label class="form-label" for="inputName">
+                                        Event Name
+                                        <span class="text-danger fw-bold">*</span>
+                                    </label>
+                                    <input
+                                        type="text"
+                                        id="name"
+                                        class="form-control"
+                                        value="KL International Jazz & Arts Festival 2019"/>
+                                </div>
+                                <div class="form-group p-1">
+                                    <label for="inputEmail">
+                                        Email Address
+                                        <span class="text-danger fw-bold">*</span>
+                                    </label>
+                                    <input
+                                        type="email"
+                                        id="email"
+                                        class="form-control"
+                                        value="abc@exmaple.com"/>
+                                    <small class="form-text text-muted" id="emailHelp">
+                                        We'll never share your email with anyone else.
+                                    </small>
+                                </div>
+                                <div class="form-group p-1">
+                                    <label for="date">
+                                        Date
+                                        <span class="text-danger fw-bold">*</span>
+                                    </label>
+                                    <input
+                                        type="date"
+                                        id="date"
+                                        class="form-control"
+                                        value="18/05/2017"
+                                        required/>
+                                </div>
+                                <div class="form-group p-1">
+                                    <label for="time">
+                                        Time
+                                        <span class="text-danger fw-bold">*</span>
+                                    </label>
+                                    <input
+                                        type="time"
+                                        id="time"
+                                        class="form-control"
+                                        value="12:43PM"
+                                        required/>
+                                </div>
+                                <div class="form-group p-1">
+                                    <label for="location">
+                                        Location(s)
+                                        <span class="text-danger fw-bold">*</span>
+                                    </label>
+                                    <input
+                                        type="text"
+                                        id="location"
+                                        class="form-control"
+                                        value="Bukit Jalil Stadium"
+                                        required/>
+                                </div> 
+                                <div class="form-group p-1">
+                                    <label for="organiser">
+                                        Organiser
+                                        <span class="text-danger fw-bold">*</span>
+                                    </label>
+                                    <input
+                                        type="text"
+                                        id="organiser"
+                                        class="form-control"
+                                        value="Marry Tan"
+                                        required/>
+                                </div>
+                                <div class="form-group p-1">
+                                    <label for="description">
+                                        Description
+                                        <span class="text-danger fw-bold">*</span>
+                                    </label>
+                                    <div class="col-sm-12">
+                                        <textarea
+                                            class="form-control"
+                                            id="description"
+                                            rows="5"
+                                            placeholder="Event Description"
+                                            required>
+                                            George Lam, one of Hong Kong’s most recognisable singers-cum-composer, is back and ready to enrapture fans with his upbeat and tongue-twisting hits! Lam’s rich and wide-range vocal ability also makes him an endearing sentimental crooner, leaving his listeners charmed for many years to come. A well-respected figure in the Cantopop music scene, Lam started professional singing in 1976 and delivered his first live music concert in Hong Kong in 1981. Since then, he has released more than 30 albums in the Cantonese and English languages and has won numerous music awards.
+                                        </textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group p-1">
+                                    <label for="price">
+                                        Ticket Price
+                                        <span class="text-danger fw-bold">*</span>
+                                    </label>
+                                    <input
+                                        type="text"
+                                        id="price"
+                                        class="form-control"
+                                        value="RM180"
+                                        required/>
+                                </div>
+                                <div class="form-group p-1 mb-1">
+                                    <div class="custom-file">
+                                        <label class="form-label" for="customFile">
+                                            Event Image
+                                            <span class="text-danger fw-bold">*</span>
+                                        </label>
+                                        <input
+                                            type="file"
+                                            class="form-control"
+                                            id="customFile"
+                                            required/>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                    <!--Modal Body-->
+                    <!--Modal Footer-->
+                    <div class="modal-footer">
+                        <button
+                            type="button"
+                            class="btn btn-danger"
+                            data-bs-dimiss="modal"> Close
+                        </button>
+                        <button
+                            type="button"
+                            class="btn btn-primary rounded-3 fw-bold"
+                            data-bs-dimiss="modal"> Submit
+                        </button>
+                    </div>
+                    <!--Modal footer-->
+                </div> 
+            </div>
+        </div>
+{% endblock %}
+
+{% block title %} Create Event {% endblock %}
+        
+{% block content %}
+        <div class="container mt-3 p-5 shadow mt-5 mb-5 bg-white rounded-3">
+            <h1
+                class="fw-bold px-5 text-center"
+                style="margin: 2rem 10%"
+                id="creation">  Want to Publish Your Events?   
+            </h1>
+            <div class="border-line"></div>
+            <div class="container">
+                <div class="text-center p-5">
+                    <h5>Click the button below and let everyone take part on it!</h5>
+                </div>
+                <!--Button trigger Publish Event modal-->
+                <div class="align-item-center text-center">
+                    <button
+                        class="btn btn-success mx-5 px-5 py-3 rounded-3 text-uppercase fw-bold"
+                        type="button"
+                        data-bs-toggle="modal"
+                        data-bs-target="#eventmodal"
+                        style="letter-spacing: 1px"> Publish Event
+                    </button>
+                </div>
+                <!--Button trigger publish event modal-->
+                <!--Publish event modal-->
+                <div
+                    class="modal fade"
+                    id="eventmodal"
+                    tabindex="-1"
+                    role="dialog"
+                    aria-labelledby="eventModalLabel"
+                    aria-hidden="true">
+                    <!--Modal-->
+                    <form method="POST" enctype="multipart/form-data">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content p-3">
+                                <!-- Modal Header -->
+                                <div class="modal-header">
+                                    <h5 class="modal-title fw-bold" id="eventModalLabel">
+                                        Publish Event
+                                    </h5>
+                                    <button
+                                        type="button"
+                                        class="close rounded"
+                                        data-bs-dismiss="modal"
+                                        aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <!--Modal Header-->
+                                <!--modal body-->
+                                <div class="modal-body">
+                                    <div class="form-outline">
+                                        <div class="form-outline">
+                                            <div class="form-group p-1">
+                                                <label class="form-label" for="inputName">
+                                                    Event Name
+                                                    <span class="text-danger fw-bold">*</span>
+                                                </label>
+                                                {{ form.name(class="form-control ") }}
+                                            </div>
+                                            <div class="form-group p-1">
+                                                <label for="inputEmail">
+                                                    Email Address
+                                                    <span class="text-danger fw-bold">*</span>
+                                                </label>
+                                                {{ form.email(class="form-control ") }}
+                                                <small class="form-text text-muted" id="emailHelp">
+                                                    We'll never share your email with anyone else.
+                                                </small>
+                                            </div>
+                                            <div class="form-group p-1">
+                                                <label for="date">
+                                                    Date
+                                                    <span class="text-danger fw-bold">*</span>
+                                                </label>
+                                                {{ form.date(class="form-control ") }}
+                                            </div>
+                                            <div class="form-group p-1">
+                                                <label for="time">
+                                                    Time
+                                                    <span class="text-danger fw-bold">*</span>
+                                                </label>
+                                                {{ form.time(class="form-control ") }}
+                                            </div>
+                                            <div class="form-group p-1">
+                                                <label for="locaton">
+                                                    Location
+                                                    <span class="text-danger fw-bold">*</span>
+                                                </label>
+                                                {{ form.location(class="form-control ") }}
+                                            </div>
+                                            <div class="form-group p-1">
+                                                <label for="organiser">
+                                                    Organiser
+                                                    <span class="text-danger fw-bold">*</span>
+                                                </label>
+                                                {{ form.organiser(class="form-control ") }}
+                                            </div>
+                                            <div class="form-group p-1">
+                                                <label for="status">
+                                                    Status
+                                                    <span class="text-danger fw-bold">*</span>
+                                                </label>
+                                                {{ form.status(class="form-control ") }}
+                                            </div>
+                                            <div class="form-group p-1">
+                                                <label for="artists">
+                                                    Artists
+                                                    <span class="text-danger fw-bold">*</span>
+                                                </label>
+                                                {{ form.artists(class="form-control ") }}
+                                            </div>
+                                            <div class="form-group p-1">
+                                                <label for="genre">
+                                                    Genre
+                                                    <span class="text-danger fw-bold">*</span>
+                                                </label>
+                                                {{ form.genre(class="form-control ") }}
+                                            </div>
+                                            <div class="form-group p-1">
+                                                <label class="form-label" for="Description">
+                                                    Description
+                                                    <span class="text-danger fw-bold">*</span>
+                                                </label>
+                                                {{ form.description(class="form-control ") }}
+                                            </div>
+                                            <div class="form-group p-1">
+                                                <label for="price">
+                                                    Price
+                                                    <span class="text-danger fw-bold">*</span>
+                                                </label>
+                                                {{ form.price(class="form-control ") }}
+                                            </div>
+                                            <div class="form-group p-1">
+                                                <div class="custom-file">
+                                                    <label class="form-label" for="custom file">
+                                                        Event image
+                                                        <span class="text-danger fw-bold">*</span>
+                                                    </label>
+                                                    <br />
+                                                    {{ form.image(class="form-control-label ") }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--modal body-->
+                                <!--modal footer-->
+                                <div class="modal footer">
+                                    <button
+                                        type="button"
+                                        class="btn btn-danger"
+                                        data-bs-dismiss="modal">Close
+                                    </button>
+                                    <button
+                                        type="button"
+                                        class="btn btn-primary rounded-3 fw-bold">
+                                        {{ form.submit(class=" btn button-color") }}
+                                    </button>
+                                </div>
+                                <!--modal footer-->
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>     
+        </div>
+    </div>
+{% endblock %}
