@@ -1,7 +1,7 @@
 
 from flask_wtf import FlaskForm
 from wtforms.fields import TextAreaField,SubmitField, StringField, PasswordField, IntegerField
-from wtforms.validators import InputRequired, Length, Email, EqualTo
+from wtforms.validators import InputRequired, Length, Email, EqualTo,DataRequired
 from wtforms import DateField, TimeField, FloatField, SelectField
 from flask_wtf.file import FileRequired, FileField, FileAllowed
 ALLOWED_FILE = {'PNG', 'JPG', 'png', 'jpg', 'jpeg'}
@@ -9,16 +9,16 @@ ALLOWED_FILE = {'PNG', 'JPG', 'png', 'jpg', 'jpeg'}
 
 #creates the login information
 class LoginForm(FlaskForm):
-    user_name=StringField("User Name", validators=[InputRequired('Enter user name')])
-    password=PasswordField("Password", validators=[InputRequired('Enter user password')])
+    user_name=StringField("User Name", validators=[InputRequired('Enter user name'),DataRequired()])
+    password=PasswordField("Password", validators=[InputRequired('Enter user password'),DataRequired()])
     submit = SubmitField("Login")
 
  # this is the registration form
 class RegisterForm(FlaskForm):
-    user_name=StringField("User Name", validators=[InputRequired("Create a user name"), Length(min=5, max=20)])
-    email_id = StringField("Email Address", validators=[Email("Please enter a valid email")])
-    phone_number = IntegerField("Contact number", validators=[InputRequired("Please enter a valid phone number")])
-    address = StringField("Address", validators=[InputRequired(), Length(min=5, max=30)])
+    user_name=StringField("User Name", validators=[InputRequired("Create a user name"), Length(min=5, max=20),DataRequired()])
+    email_id = StringField("Email Address", validators=[Email("Please enter a valid email"),DataRequired()])
+    phone_number = IntegerField("Contact number", validators=[InputRequired("Please enter a valid phone number"),DataRequired()])
+    address = StringField("Address", validators=[InputRequired(), Length(min=5, max=30),DataRequired()])
     #add buyer/seller - check if it is a buyer or seller hint : Use RequiredIf field
 
 

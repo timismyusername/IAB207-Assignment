@@ -14,7 +14,6 @@ bp = Blueprint('auth', __name__)
 # this is the hint for a login function
 @bp.route('/login', methods=['GET', 'POST'])
 def login(): #view function
-    print('In Login View function')
     login_form = LoginForm()
     error=None
     if(login_form.validate_on_submit()==True):
@@ -64,5 +63,5 @@ def register(): #view function
 def logout():
     logout_user()
     flash("You have successfully logged out")
-    return redirect(url_for('main.index'))
+    return redirect(url_for('/login'))
 
