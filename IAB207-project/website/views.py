@@ -11,6 +11,16 @@ def index():
     event = Event.query.all()    
     return render_template('index.html', event=event)
 
+@bp.route('/search')
+def search():
+    if request.args['search']:
+        print(request.args['search'])
+        eve = "%" + request.args['search'] + '%'
+        event = Event.query.filter(Event.description.like(eve)).all()
+        return render_template('index.html', event=event)
+    else:
+        return redirect(url_for('main.index'))
+
 @bp.route("/logout")
 @login_required
 def logout():
