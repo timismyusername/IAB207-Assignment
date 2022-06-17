@@ -1,5 +1,5 @@
 {% extends 'base-fullscreen.html' %}
-
+<!-- {% import "bootstrap/wtf.html" as wtf %} -->
 {% import "bootstrap/form.html" as wtf %}
 
 {% block header %}
@@ -234,6 +234,7 @@
         Please let us know your thoughts! Comment below :)
       </h3>
     </div>
+    <!-- {{wtf.quick_form(form,"/event/{0}".format(event.id))}} -->
     {{wtf.render_form(form,"/event/{0}".format(event.id))}} 
     {% for comment in event.comments %}
     <form class="p-5 mx-5">
