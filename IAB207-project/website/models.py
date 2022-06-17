@@ -16,8 +16,6 @@ class User(db.Model, UserMixin):
     # relation to call user.comments and comment.created_by
     comments = db.relationship('Comment', backref='user')
 
-
-
 class Event(db.Model):
     __tablename__ = 'events'
     id = db.Column(db.Integer, primary_key=True)
@@ -40,6 +38,13 @@ class Event(db.Model):
 
     def __repr__(self): 
         return "<Name: {}>".format(self.name)
+    
+    def format(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'genre': self.genre
+        }
 
 class Comment(db.Model):
     __tablename__ = 'comments'

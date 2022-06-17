@@ -79,52 +79,30 @@
       <!-- Filter Events -->
       <div id="filter" class="col-12 col-md-7 p-3">
         <i class="bi bi-filter"></i>
-
-        <button class="btn btn-primary filter-button" data-filter="all">
-          All
-        </button>
-        <button
-          class="btn btn-outline-primary filter-button"
-          data-filter="Jazz"
-        >
-          Jazz
-        </button>
-        <button
-          class="btn btn-outline-primary filter-button"
-          data-filter="Pop"
-        >
-          Pop
-        </button>
-        <button
-          class="btn btn-outline-primary filter-button"
-          data-filter="Rock"
-        >
-          Rock
-        </button>
-        <button
-          class="btn btn-outline-primary filter-button"
-          data-filter="Upcoming"
-        >
-          K-Pop
-        </button>
-        <button
-          class="btn btn-outline-primary filter-button"
-          data-filter="Ended"
-        >
-          J-Pop
-        </button>
-        <button
-          class="btn btn-outline-primary filter-button"
-          data-filter="Cancelled"
-        >
-          C-Pop
-        </button>
-        <button
-          class="btn btn-outline-primary filter-button"
-          data-filter="Cancelled"
-        >
-          Others
-        </button>
+        <form action="/showall" method="post" style="display:inline-block">
+          <button class="btn btn-primary filter-button" name="showall" type="submit">All</button>
+        </form>
+        <form action="/jazz" method="post" style="display:inline-block">
+          <button class="btn btn-outline-primary filter-button" name="jazz" type="submit">Jazz</button>
+        </form>
+        <form action="/pop" method="post" style="display:inline-block">
+          <button class="btn btn-outline-primary filter-button" name="pop" type="submit">Pop</button>
+        </form>
+        <form action="/rock" method="post" style="display:inline-block">
+          <button class="btn btn-outline-primary filter-button" name="rock" type="submit">Rock</button>
+        </form>
+        <form action="/jpop" method="post" style="display:inline-block">
+          <button class="btn btn-outline-primary filter-button" name="jpop" type="submit">J-Pop</button>
+        </form>
+        <form action="/kpop" method="post" style="display:inline-block">
+          <button class="btn btn-outline-primary filter-button" name="kpop" type="submit">K-Pop</button>
+        </form>
+        <form action="/cpop" method="post" style="display:inline-block">
+          <button class="btn btn-outline-primary filter-button" name="cpop" type="submit">C-Pop</button>
+        </form>
+        <form action="/others" method="post" style="display:inline-block">
+          <button class="btn btn-outline-primary filter-button" name="others" type="submit">Others</button>
+        </form>
       </div>
       <!-- Filter Events -->
 

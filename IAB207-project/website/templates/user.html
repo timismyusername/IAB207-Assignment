@@ -1,5 +1,5 @@
 {% extends "base-fullscreen.html" %}
-{% import "bootstrap/wtf.html" as wtf %}
+{% import "bootstrap/form.html" as wtf %}
 {% block content %}
 <div class="page-header">
     <h4>{{heading}}</h4>
@@ -23,7 +23,7 @@
 
 <!-- Form rendering is simple and easy if using bootstrap -->
 <div class="col-md-6">
-{{wtf.quick_form(form)}}
+{{wtf.render_form(form)}}
 </div>
 
 <!-- When you have login form, then do show the user a link to register -->
