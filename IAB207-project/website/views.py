@@ -20,48 +20,40 @@ def search():
     else:
         return redirect(url_for('main.index'))
 
-@bp.route('/filter', methods=['POST', 'GET'])
-def filter_events(genre):
-    if Event.genre("<genre>"):
-        curl = mysql.connection.cursor()
-        curl.execute("SELECT * FROM events WHERE genre %s", [condition])
-        data = curl.fetchall()
-        curl.close()
-        return render_template("/filter", events=data)
-    else:
-        return redirect(url_for('/index.html'))
+@bp.route('/events/<genre>')
+def jazz(genre):
+    jazz = Event.query.filter(Event.genre.jazz).all()
+    return render_template('index.html', event=event)
 
-@bp.route('/showall', methods=['POST'])
-def showall():
-    return filter_events(None)
+@bp.route('/events/<genre>')
+def pop(genre):
+    pop = Event.query.filter(Event.genre.pop).all()
+    return render_template('index.html', event=event)
 
-@bp.route('/jazz', methods=['POST'])
-def jazz():
-    return filter_events('Jazz')
+@bp.route('/events/<genre>')
+def rock(genre):
+    rock = Event.query.filter(Event.genre.rock).all()
+    return render_template('index.html', event=event)
 
-@bp.route('/pop', methods=['POST'])
-def pop():
-    return filter_events('Pop')
+@bp.route('/events/<genre>')
+def kpop(genre):
+    kpop = Event.query.filter(Event.genre.kpop).all()
+    return render_template('index.html', event=event)
 
-@bp.route('/rock', methods=['POST'])
-def rock():
-    return filter_events('rock')
+@bp.route('/events/<genre>')
+def jpop(genre):
+    jpop = Event.query.filter(Event.genre.jpop).all()
+    return render_template('index.html', event=event)
 
-@bp.route('/kpop', methods=['POST'])
-def kpop():
-    return filter_events('K-Pop')
+@bp.route('/events/<genre>')
+def cpop(genre):
+    cpop = Event.query.filter(Event.genre.cpop).all()
+    return render_template('index.html', event=event)
 
-@bp.route('/jpop', methods=['POST'])
-def jpop():
-    return filter_events('J-Pop')
-
-@bp.route('/cpop', methods=['POST'])
-def cpop():
-    return filter_events('C-Pop')
-
-@bp.route('/others', methods=['POST'])
-def others():
-    return filter_events('Others')
+@bp.route('/events/<genre>')
+def other(genre):
+    other = Event.query.filter(Event.genre.other).all()
+    return render_template('index.html', event=event)
 
 @bp.route("/logout")
 @login_required
